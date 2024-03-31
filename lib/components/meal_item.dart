@@ -9,7 +9,7 @@ class MealItem extends StatelessWidget {
     Navigator.of(context).pushNamed(
       AppRoutes.mealDetail,
       arguments: meal,
-    );
+    ).then((value) => print(value));
   }
 
   const MealItem(this.meal, {super.key});
