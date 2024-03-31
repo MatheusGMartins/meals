@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meals/screens/meal_detail_screen.dart';
 import 'package:meals/utils/app_routes.dart';
 import 'screens/categories_meals_screen.dart';
+import 'screens/settings_screen.dart';
 import 'screens/tabs_screen.dart';
 
 void main() => runApp(const MyApp());
@@ -25,9 +26,10 @@ class MyApp extends StatelessWidget {
           ),
           textTheme: ThemeData.light().textTheme.copyWith(
                 titleLarge: const TextStyle(
-                    fontSize: 20,
-                    fontFamily: 'RobotoCondensed',
-                    color: Colors.black),
+                  fontSize: 20,
+                  fontFamily: 'RobotoCondensed',
+                  color: Colors.black,
+                ),
               ),
           appBarTheme: const AppBarTheme(
             titleTextStyle: TextStyle(
@@ -41,6 +43,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.home: (ctx) => const TabsScreen(),
         AppRoutes.categoriesMeals: (ctx) => const CategoriesMealsScreen(),
         AppRoutes.mealDetail: (ctx) => const MealDetailScreen(),
+        AppRoutes.settings: (ctx) => const SettingsScreen(),
       },
       // onGenerateRoute: (settings) {
       //   if (settings.name == '/alguma-coisa') {
