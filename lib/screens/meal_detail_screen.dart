@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meals/components/adaptative_app_bar.dart';
 
 import '../models/meal.dart';
 
@@ -36,7 +35,15 @@ class MealDetailScreen extends StatelessWidget {
 
     return Scaffold(
         backgroundColor: Theme.of(context).canvasColor,
-        appBar: AdaptativeAppBar(meal.title),
+        appBar: AppBar(
+          title: SizedBox(
+            width: MediaQuery.of(context).size.width * 0.65,
+            child: Text(
+              meal.title,
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: [

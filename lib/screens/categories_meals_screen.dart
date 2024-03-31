@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meals/components/adaptative_app_bar.dart';
 import 'package:meals/components/meal_item.dart';
 import 'package:meals/data/dummy_data.dart';
 import '../models/category.dart';
@@ -17,7 +16,15 @@ class CategoriesMealsScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Theme.of(context).canvasColor,
-      appBar: AdaptativeAppBar(category.title),
+      appBar: AppBar(
+        title: SizedBox(
+          width: MediaQuery.of(context).size.width * 0.65,
+          child: Text(
+            category.title,
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
       body: ListView.builder(
         itemCount: categoryMeals.length,
         itemBuilder: (ctx, index) {
