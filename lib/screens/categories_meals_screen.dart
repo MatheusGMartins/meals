@@ -16,6 +16,7 @@ class CategoriesMealsScreen extends StatelessWidget {
     }).toList();
 
     return Scaffold(
+      backgroundColor: Theme.of(context).canvasColor,
       appBar: AdaptativeAppBar(category.title),
       body: ListView.builder(
         itemCount: categoryMeals.length,

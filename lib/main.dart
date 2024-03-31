@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals/screens/categories_screen.dart';
+import 'package:meals/screens/meal_detail_screen.dart';
 import 'package:meals/utils/app_routes.dart';
 import 'screens/categories_meals_screen.dart';
 
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData theme = ThemeData(
       primarySwatch: Colors.blue,
+      canvasColor: const Color.fromRGBO(255, 254, 229, 1),
       fontFamily: 'Raleway',
     );
     return MaterialApp(
@@ -21,7 +23,6 @@ class MyApp extends StatelessWidget {
             primary: Colors.pink,
             secondary: Colors.amber,
           ),
-          canvasColor: const Color.fromRGBO(255, 254, 229, 1),
           textTheme: ThemeData.light().textTheme.copyWith(
                 titleLarge: const TextStyle(
                     fontSize: 20,
@@ -38,7 +39,26 @@ class MyApp extends StatelessWidget {
       routes: {
         AppRoutes.home: (ctx) => const CategoriesScreen(),
         AppRoutes.categoriesMeals: (ctx) => const CategoriesMealsScreen(),
+        AppRoutes.mealDetail: (ctx) => const MealDetailScreen(),
       },
+      // onGenerateRoute: (settings) {
+      //   if (settings.name == '/alguma-coisa') {
+      //     return null;
+      //   } else {
+      //     return MaterialPageRoute(
+      //       builder: (_) {
+      //         return const CategoriesScreen();
+      //       },
+      //     );
+      //   }
+      // },
+      // onUnknownRoute: (settings) {
+      //   return MaterialPageRoute(
+      //     builder: (_) {
+      //       return const CategoriesScreen();
+      //     },
+      //   );
+      // },
     );
   }
 }

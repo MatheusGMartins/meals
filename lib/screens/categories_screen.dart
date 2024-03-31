@@ -9,6 +9,7 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).canvasColor,
       appBar: const AdaptativeAppBar('Vamos cozinhar'),
       body: GridView(
         padding: const EdgeInsets.all(25),
