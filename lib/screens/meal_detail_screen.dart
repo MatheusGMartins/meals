@@ -27,7 +27,10 @@ class MealDetailScreen extends StatelessWidget {
         child: child);
   }
 
-  const MealDetailScreen({super.key});
+  final Function(Meal) onToggleFavorite;
+  final bool Function(Meal) isFavorite;
+
+  const MealDetailScreen(this.onToggleFavorite, this.isFavorite, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -96,11 +99,15 @@ class MealDetailScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(
-          Icons.star,
-        ),
+        child: isFavorite(meal)
+            ? const Icon(
+                Icons.star,
+              )
+            : const Icon(
+                Icons.star_border,
+              ),
         onPressed: () {
-          Navigator.of(context).pop(meal.title);
+          onToggleFavorite(meal);
         },
       ),
     );
